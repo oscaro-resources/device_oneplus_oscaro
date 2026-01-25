@@ -9,16 +9,22 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LineageOS stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common #EuclidAOSP stuff
+$(call inherit-product, vendor/euclid/config/common_full_phone.mk)
 
 # Inherit from oscaro device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-LINEAGE_VERSION_APPEND_TIME_OF_DAY := true
+# EuclidOS Flags
+EUCLID_BUILD_TYPE := OFFICIAL
+EUCLID_MAINTAINER := Chethan
+EUCLID_DEVICE := OnePlus_Nord_CE2_Lite_5G
+EUCLID_PROCESSOR := Snapdragon_695
+TARGET_PREBUILT_LAWNICONS := true
+TARGET_INCLUDE_PIXEL_LAUNCHER := false
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_oscaro
+PRODUCT_NAME := euclid_oscaro
 PRODUCT_DEVICE := oscaro
 PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := CPH2381

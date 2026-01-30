@@ -9,16 +9,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LineageOS stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Infinity stuff
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 # Inherit from oscaro device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-LINEAGE_VERSION_APPEND_TIME_OF_DAY := true
+# InfinityX flags
+INFINITY_MAINTAINER := MUGIWARA
+WITH_GAPPS := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_oscaro
+PRODUCT_NAME := infinity_oscaro
 PRODUCT_DEVICE := oscaro
 PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := CPH2381
